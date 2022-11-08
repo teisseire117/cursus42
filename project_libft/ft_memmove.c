@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hateisse <hateisse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/30 05:25:31 by hateisse          #+#    #+#             */
+/*   Updated: 2022/10/30 05:25:34 by hateisse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char	*dest_addr;
+
+	dest_addr = dest;
+	if (dest <= src)
+		while (n-- > 0)
+			*(dest_addr++) = *((char *)src++);
+	else
+		while (n-- > 0)
+			*(dest_addr + n) = *((char *)src + n);
+	return (dest);
+}
